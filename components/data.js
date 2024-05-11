@@ -7,8 +7,9 @@ import {
   SunIcon,
 } from "@heroicons/react/24/solid";
 
-import benefitOneImg from "../public/img/benefit-one.png";
-import benefitTwoImg from "../public/img/benefit-two.png";
+import benefitOneImg from "../public/img/1.jpeg";
+import benefitTwoImg from "../public/img/2.jpeg";
+import benefitThreeImg from "../public/img/3.jpeg";
 
 const benefitOne = {
   title: "About Us",
@@ -38,7 +39,7 @@ const benefitTwo = {
 const benefitThree = {
   title: "Sustainability",
   desc: `One of our strategic pillars is to incorporate sustainability into its business by building economic, social and environmental legacies and mitigating the impacts of its operations. Therefore, we seek to build strong and lasting relationship with our stakeholders, invest in mitigating the effects of our activities, work with high ethical standards, have transparent management and actively contribute to advances related to the environment, biodiversity and sustainable development`,
-  image: benefitOneImg,
+  image: benefitThreeImg,
   bullets: [],
 };
 

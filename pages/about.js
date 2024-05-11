@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Navbar from "../components/navbar";
 
-import { benefitTwo } from "../components/data";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 
-import benefitTwoImg from "../public/img/benefit-two.png";
+import benefitTwoImg from "../public/img/14.jpeg";
 
 const About = () => {
   const data = {
@@ -46,18 +45,12 @@ const About = () => {
         <title>Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is a landing page template built with next.js & Tailwind CSS"
+          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Navbar />
-      {/* <SectionTitle
-        pretitle="Gold Crown Africa Benefits"
-        title=" Why should you use this landing page">
-        Gold Crown Africa is a landing page & marketing website template for startups
-        and indie projects. Its built with Next.js & TailwindCSS.
-      </SectionTitle> */}
       <Benefits imgPos="right" data={data} />
       <Footer />
     </>

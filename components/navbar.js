@@ -92,7 +92,7 @@ const Navbar = () => {
                   href={menu.route}
                   className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 focus:outline-none dark:focus:text-gold-500 dark:focus:bg-gold-100 ${
                     router.pathname === menu.route
-                      ? "bg-gold-100 text-gold-500 dark:bg-gold-100 dark:text-gold-500"
+                      ? "bg-gold-400 text-gold-500 dark:text-gray-700"
                       : ""
                   }`}
                 >

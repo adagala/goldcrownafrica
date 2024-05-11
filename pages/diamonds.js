@@ -5,7 +5,9 @@ import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 import Container from "../components/container";
 
-import benefitTwoImg from "../public/img/benefit-two.png";
+import firstImg from "../public/img/2.jpeg";
+import secondImg from "../public/img/12.jpeg";
+import thirdImg from "../public/img/6.jpeg";
 
 const About = () => {
   const topSection = {
@@ -20,7 +22,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: firstImg,
     bullets: [],
   };
   const middleSection = {
@@ -40,7 +42,7 @@ const About = () => {
         <div className="my-5">Incase of any inquiry contact us.</div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: secondImg,
     bullets: [],
   };
   const bottomSection = {
@@ -62,7 +64,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: thirdImg,
     bullets: [],
   };
   return (
@@ -71,7 +73,7 @@ const About = () => {
         <title>Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is a landing page template built with next.js & Tailwind CSS"
+          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -4,12 +4,10 @@ import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 
 import { benefitOne, benefitTwo, benefitThree } from "../components/data";
-import Video from "../components/video";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
-import Faq from "../components/faq";
-import PopupWidget from "../components/popupWidget";
+import diamondsImg from "../public/img/9.jpeg";
 
 const Home = () => {
   return (
@@ -18,7 +16,7 @@ const Home = () => {
         <title>Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is a landing page template built with next.js & Tailwind CSS"
+          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -27,10 +25,10 @@ const Home = () => {
       <Hero />
       <SectionTitle
         pretitle="Gold Crown Africa Benefits"
-        title=" Why should you use this landing page"
+        title=" Why should you should trust us"
       >
-        Gold Crown Africa is a landing page & marketing website template for
-        startups and indie projects. Its built with Next.js & TailwindCSS.
+        We deal with refining services, Assayings services, Security Services,
+        mineral mining etc.
       </SectionTitle>
       <Benefits data={benefitOne} />
       <Benefits imgPos="right" data={benefitTwo} />
@@ -50,19 +48,12 @@ const Home = () => {
           human rights.
         </div>
       </SectionTitle>
-      <Video />
       <SectionTitle
         pretitle="Our Featured"
         title="Mineral Trading Products"
       ></SectionTitle>
       <Testimonials />
-      {/* <SectionTitle pretitle="FAQ" title="Frequently Asked Questions">
-        Answer your customers possible questions here, it will increase the
-        conversion rate as well as support or chat requests.
-      </SectionTitle> */}
-      {/* <Faq /> */}
       <Footer />
-      {/* <PopupWidget /> */}
     </>
   );
 };

@@ -4,9 +4,13 @@ import Navbar from "../components/navbar";
 
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
-import Container from "../components/container";
 
-import benefitTwoImg from "../public/img/benefit-two.png";
+import firstServiceImg from "../public/img/5.jpeg";
+import secondServiceImg from "../public/img/3.jpeg";
+import thirdServiceImg from "../public/img/17.jpeg";
+import fourthServiceImg from "../public/img/16.jpeg";
+import fifthServiceImg from "../public/img/10.jpeg";
+import sixthServiceImg from "../public/img/7.jpeg";
 
 const About = () => {
   const firstService = {
@@ -30,7 +34,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: firstServiceImg,
     bullets: [],
   };
   const secondService = {
@@ -70,7 +74,7 @@ const About = () => {
         <div className="my-5">Incase of any inquiry contact us.</div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: secondServiceImg,
     bullets: [],
   };
   const thirdService = {
@@ -99,7 +103,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: thirdServiceImg,
     bullets: [],
   };
 
@@ -126,7 +130,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: fourthServiceImg,
     bullets: [],
   };
   const fifthService = {
@@ -166,7 +170,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: fifthServiceImg,
     bullets: [],
   };
   const sixthService = {
@@ -191,7 +195,7 @@ const About = () => {
         </div>
       </div>
     ),
-    image: benefitTwoImg,
+    image: sixthServiceImg,
     bullets: [],
   };
   return (
@@ -200,7 +204,7 @@ const About = () => {
         <title>Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is a landing page template built with next.js & Tailwind CSS"
+          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

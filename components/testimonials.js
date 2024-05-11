@@ -2,10 +2,6 @@ import Image from "next/image";
 import React from "react";
 import Container from "./container";
 
-import userOneImg from "../public/img/user1.jpg";
-import userTwoImg from "../public/img/user2.jpg";
-import userThreeImg from "../public/img/user3.jpg";
-
 const Testimonials = () => {
   return (
     <Container>
@@ -14,7 +10,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <div className="">
               <Mark>Gold Trading</Mark>
-              <div className="mt-2 text-gray-600">
+              <div className="mt-2 text-gray-600 dark:text-gray-300">
                 All our operations are licenced for mining, Purchase and export
                 for the countries of origin by the local legal and governmental
                 authorities. We are Mining and purchasing Rough Gold in several
@@ -28,7 +24,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <div className="">
               <Mark>Diamonds Trading</Mark>
-              <div className="mt-2 text-gray-600">
+              <div className="mt-2 text-gray-600 dark:text-gray-300">
                 We source Rough Diamonds from several sub-Saharan countries for
                 further cutting and polishing in our manufactories and
                 facilities for our client. Our deliveries are made under
@@ -43,7 +39,7 @@ const Testimonials = () => {
           <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
             <div className="">
               <Mark>Copper Cathode Trading</Mark>
-              <div className="mt-2 text-gray-600">
+              <div className="mt-2 text-gray-600 dark:text-gray-300">
                 We offer LME non-registered production of DRC and Zambia
                 refineries under specific terms and conditions. Cathodes are
                 sold including full range of services door to door and we can

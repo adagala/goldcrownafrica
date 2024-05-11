@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Container from "./container";
-import heroImg from "../public/img/refining-services.jpg";
+import heroImg from "../public/img/18.jpeg";
 
 const Hero = () => {
   return (
@@ -12,9 +12,9 @@ const Hero = () => {
               Gold Crown Africa
             </h1>
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Gold Crown Africa landing page & marketing website template for
-              startups and indie projects. Its built with Next.js & TailwindCSS.
-              And its completely open-source.
+              Gold Crown Africa is the best mineral sourcing company in Africa
+              that deals with gold, rough diamonds, copper cathodes, rubis,
+              metiorite, diamonds among other products.
             </p>
           </div>
         </div>

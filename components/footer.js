@@ -36,9 +36,9 @@ export default function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-              Gold Crown Africa is a landing page & marketing website template
-              for startups and indie projects. Its built with Next.js &
-              TailwindCSS.
+              Gold Crown Africa is the best mineral sourcing company in Africa
+              that deals with gold, rough diamonds, copper cathodes, rubis,
+              metiorite, diamonds among other products.
             </div>
           </div>
 
