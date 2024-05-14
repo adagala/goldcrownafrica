@@ -13,26 +13,26 @@ const About = () => {
       <div>
         <div className="my-5">
           Our company is oriented to geology applications in mining sector in
-          Sub Sahara part of Africa Continent.
+          Sub-Saharan part of the African continent.
         </div>
         <div className="my-5">
-          Experience and our know-how we collect during the last 30 years. We
-          provide full range of services to our clients and partners. Our
+          Our experience and know-how has been collected over the last 30 years.
+          We provide full range of services to our clients and partners. Our
           management is based on highly skilled professionals. Most of our top
-          managers are experts and European citizens. We employ highly educated
-          and trustworthy local managers. In special case we, the best are even
-          in managing positions. All our operations are based on direct
-          connection to local mining and processing companies and individuals.
-          All of them know us from the very bottom line when we provide them
-          with start up or reinvestment services from survey, exploration and
-          mining services to trading operations secured via Escrow Account in
-          Nairobi Republic of Kenya.
+          managers are experts and european citizens. We employ highly educated
+          and trustworthy local managers. In special cases, the best are even in
+          managing positions. All our operations are based on direct connections
+          to local mining and processing companies and individuals. All of them
+          know us from the very bottom line when we provide them with start up
+          or reinvestment services from survey, exploration and mining services
+          to trading operations secured via Escrow Account in Nairobi, Republic
+          of Kenya.
         </div>
         <div className="my-5">
-          Our client investors and partners are our families, the range of
+          Our client investors and partners are our families. The range of
           services are doors to doors secured by own special force to protect
           funds, property and life. Hope you will recognize us as valuable
-          partner for your business soon. In case of any necessity contact us
+          partner for your business soon. In case of any necessity, contact us.
         </div>
       </div>
     ),

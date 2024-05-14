@@ -18,19 +18,20 @@ const About = () => {
     desc: (
       <div>
         <div className="my-5">
-          For physical safety we are under protection by Maritime SVS Squad, for
+          For physical safety we are under protection by Maritime SVS Squad. For
           geopolitical risk management there are no real instruments except
-          adequate behaviour to avoid any conflict .sometimes it does not help
-          and we have to use another mode of safety services in cooperation
-          Governmental Army troops or National Police Squads .Sometimes its even
-          hard to recognize who is a real police officer on the road, sometimes
-          even rebels wear regular army uniforms and many even the higher ranked
-          officers are rebel troops members or leaders.This all we have to
-          recognize before we step in contrary position and be sure we know how
-          to handle the crisis situation right the way.There is not much to
-          present ,countries in Africa are mostly underdeveloped and citizens
-          are upset watching their leaders making billions of dollars leaving
-          own nation under pseudo-development that in fact means poverty.
+          adequate behaviour to avoid any conflict Sometimes it does not help
+          and we have to use another mode of safety services in co-operation
+          Governmental Army troops or National Police Squads. Sometimes it is
+          even hard to recognize who is a real police officer on the road,
+          sometimes even rebels wear regular army uniforms and even the higher
+          ranked officers are rebel troops members or leaders. This all; we have
+          to recognize before we step in any contrary position and be sure we
+          know how to handle the crisis situation the right way. There is not
+          much to present, countries in Africa are mostly under-developed and
+          citizens are upset watching their leaders making billions of dollars
+          leaving their own nation under pseudo-development that in fact means
+          poverty.
         </div>
       </div>
     ),
@@ -42,25 +43,25 @@ const About = () => {
     desc: (
       <div>
         <div className="my-5">
-          In collaboration with MM Laboratories Solution Ltd our JV partners ,we
+          In collaboration with MM Laboratories Solution Ltd our JV partners, we
           are able to offer a full spectrum of smelting services to customers
-          across the sub-saharan region. We specialise in smelting gold through
+          across the Sub-Saharan region. We specialise in smelting gold through
           Electric Induction Furnace. This environmentally friendly technique
-          enables us to convert large lots of gold and into grain, or smaller
-          category bars of various sizes and purity levels. Our expertise allows
-          us to convert gold according to the client's request, while assuring
-          the highest degree of quality and accuracy with the shortest turn
-          around times at a very competitive premium .Gold is processed directly
-          at MM Laboratory premises and whatever came into Lab never leave
-          stronghold except in the case of export.All rough gold deliveries are
-          melted and tested in whole amount of consignment .Bars are examined
-          and marked ,saved in our strongholds and exported by our agents
-          directly to refineries.We are currently using mobile or portable labs
-          that offer full-scale assaying services on site and also established
-          or permanent labs that use the traditional Fire assay method ,also
-          known as the cupellation method to determine the concentration of
-          gold.The technique uses Titration and Inductive Coupled Plasma or ICP
-          to determine the purity of metals, with very high precision. X-ray
+          enables us to convert lots of gold and into grain, or smaller category
+          bars of various sizes and purity levels. Our expertise allows us to
+          convert gold according to the client's request while assuring the
+          highest degree of quality and accuracy with the shortest turn around
+          times at a very competitive premium. Gold is processed directly at MM
+          Laboratory premises and whatever came into Lab never leave stronghold
+          except in the case of export.All rough gold deliveries are melted and
+          tested in whole amount of consignment .Bars are examined and marked
+          ,saved in our strongholds and exported by our agents directly to
+          refineries.We are currently using mobile or portable labs that offer
+          full-scale assaying services on site and also established or permanent
+          labs that use the traditional Fire assay method ,also known as the
+          cupellation method to determine the concentration of gold.The
+          technique uses Titration and Inductive Coupled Plasma or ICP to
+          determine the purity of metals, with very high precision. X-ray
           Fluorescence is used to determine the elements present inside the
           alloys. ICP is also used to verify the purity of scrap gold that
           cannot be detected by fire assay due to influence of contamination

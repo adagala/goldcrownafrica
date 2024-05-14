@@ -11,7 +11,7 @@ const Testimonials = () => {
             <div className="">
               <Mark>Gold Trading</Mark>
               <div className="mt-2 text-gray-600 dark:text-gray-300">
-                All our operations are licenced for mining, Purchase and export
+                All our operations are licenced for mining, purchase and export
                 for the countries of origin by the local legal and governmental
                 authorities. We are Mining and purchasing Rough Gold in several
                 localities in Western and Eastern Africa. Gold is purchased in
@@ -25,12 +25,12 @@ const Testimonials = () => {
             <div className="">
               <Mark>Diamonds Trading</Mark>
               <div className="mt-2 text-gray-600 dark:text-gray-300">
-                We source Rough Diamonds from several sub-Saharan countries for
-                further cutting and polishing in our manufactories and
-                facilities for our client. Our deliveries are made under
-                Kimberly protocol terms and conditions by our licensed
-                companies. Our gemologists are ready to examine and sort the
-                rough stones according to the usual standards.
+                We source Rough Diamonds from several Sub-Saharan countries for
+                further cutting and polishing in our factories and facilities
+                for our client. Our deliveries are made under Kimberly protocol
+                terms and conditions by our licensed companies. Our gemologists
+                are ready to examine and sort the rough stones according to the
+                usual standards.
               </div>
             </div>
           </div>

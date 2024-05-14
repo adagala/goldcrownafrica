@@ -14,7 +14,7 @@ const Hero = () => {
             <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
               Gold Crown Africa is the best mineral sourcing company in Africa
               that deals with gold, rough diamonds, copper cathodes, rubis,
-              metiorite, diamonds among other products.
+              metiorite and diamonds among other products.
             </p>
           </div>
         </div>

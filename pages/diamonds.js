@@ -36,7 +36,7 @@ const About = () => {
           Account at Viamatcare in Kloten Swizerland or their Geneva deposit
           facility. Conditions are based on special database of collectors and
           special investors looking for rare occasional investments. We are also
-          cooperating with Christies and Sotheby Auction Hall to place the
+          co-operating with Christies and Sotheby Auction Hall to place the
           collectibles into Auction.
         </div>
         <div className="my-5">Incase of any inquiry contact us.</div>
@@ -50,7 +50,7 @@ const About = () => {
     desc: (
       <div>
         <div className="my-5">
-          The first sorting is made at the time of out come from the mine or at
+          The first sorting is made at the time of outcome from the mine or at
           the time of purchase. Results are mostly double checked by independent
           gemology expert. In case we export rough diamond to our cutting and
           polishing facility in Antwerp the second sorting and evaluation is

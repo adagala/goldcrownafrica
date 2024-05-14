@@ -15,9 +15,9 @@ const About = () => {
     desc: (
       <div>
         <div className="my-5">
-          All our operations are licenced for mining, Purchase and export for
+          All our operations are licenced for mining, purchase and export for
           the countries of origin by the local legal and governmental
-          authorities. We are Mining and purchasing Rough Gold in several
+          authorities. We are mining and purchasing Rough Gold in several
           localities in Western and Eastern Africa. Gold is purchased in several
           forms as sand, dust, nugget, bars and ingots. The purchases are always
           made upon full consignment, smelting and quality specification using
@@ -29,7 +29,6 @@ const About = () => {
           local miners, communities and small scale mining associations.
         </div>
         <div className="my-5">
-          {" "}
           Gold is purchased in several forms as sand, dust, nugget, bars and
           ingots. The purchases are always made upon full consignment, smelting
           and quality specification using fire Assay, Cupellation, specific
@@ -37,7 +36,7 @@ const About = () => {
         </div>
         <div>
           After the quality determination, we pay using our Bank Accounts in
-          Local Commercial banks. Whenever the payment is made, Our Esquire
+          Local Commercial Banks. Whenever the payment is made, Our Esquire
           shall release the funds held on Escrow Account to re-charge our
           operational Accounts to be able to continue in purchases from local
           miners, communities and small scale mining associations.
@@ -69,7 +68,7 @@ const About = () => {
     desc: (
       <div>
         <div className="my-5">
-          We source Rough Diamonds from several sub-Saharan countries for
+          We source Rough Diamonds from several Sub-Saharan countries for
           further cutting and polishing in our manufactories and facilities for
           our client. Our deliveries are made under Kimberly protocol terms and
           conditions by our licensed companies. Our gemologists are ready to
@@ -109,7 +108,7 @@ const About = () => {
         The relationship with refineries is maintained by Inspired General
         Trading LLc in Dubai UAE and its top management. Export and import
         clearing and handling is fully under IGT control. For security purposes
-        we are contracting G4Si Dubai. Refineries we cooperate with are in UAE
+        we are contracting G4Si Dubai. Refineries we co-operate with are in UAE
         International Free Zones. The details for possible suppliers are
         attached in our SPA draft.The details for possible investors willing and
         able to turn their money under short, middle and long term contractual

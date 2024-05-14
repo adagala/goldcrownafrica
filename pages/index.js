@@ -27,7 +27,7 @@ const Home = () => {
         pretitle="Gold Crown Africa Benefits"
         title=" Why should you should trust us"
       >
-        We deal with refining services, Assayings services, Security Services,
+        We deal with refining services, assayings services, security Services,
         mineral mining etc.
       </SectionTitle>
       <Benefits data={benefitOne} />
@@ -44,7 +44,7 @@ const Home = () => {
         <div className="mt-8">
           Our sustainability practices are focused on those areas that are
           material to our business and operations, these being community
-          relations, employees, environment, health and safety, and security and
+          relations, employees, environment, health and safety, security and
           human rights.
         </div>
       </SectionTitle>

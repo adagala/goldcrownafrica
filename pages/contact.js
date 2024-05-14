@@ -49,7 +49,7 @@ const Home = () => {
                   Phone
                 </Mark>
               </div>
-              <p className="text-xl leading-normal mt-2">+254 700 123 456</p>
+              <p className="text-xl leading-normal mt-2">+254 722 919 506</p>
             </div>
           </div>
           <div className="lg:col-span-2 xl:col-auto">
@@ -60,7 +60,9 @@ const Home = () => {
                   Mail
                 </Mark>
               </div>
-              <p className="text-xl leading-normal mt-2">goldmining@mail.com</p>
+              <p className="text-xl leading-normal mt-2">
+                info@goldcrownafrica.com
+              </p>
             </div>
           </div>
         </div>
