@@ -37,7 +37,7 @@ export default function Footer() {
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
               Gold Crown Africa is the best mineral sourcing company in Africa
-              that deals with gold, rough diamonds, copper cathodes, rubis,
+              that deals with gold, rough diamonds, copper cathodes, rubies,
               metiorite, diamonds among other products.
             </div>
           </div>
