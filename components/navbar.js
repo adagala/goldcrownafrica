@@ -13,6 +13,11 @@ const Navbar = () => {
     { title: "Products", route: "/products" },
     { title: "Diamonds", route: "/diamonds" },
     { title: "Contact", route: "/contact" },
+    {
+      title: "WhatsApp",
+      route: "https://wa.me/254737605955",
+      external: true,
+    },
   ];
 
   return (
@@ -69,6 +74,7 @@ const Navbar = () => {
                       <Link
                         key={index}
                         href={item.route}
+                        target={item.external ? "_blank" : "_self"}
                         className={`w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 dark:focus:bg-gold-100 focus:outline-none ${
                           router.pathname === item.route ? "text-gold-500" : ""
                         }`}
@@ -90,6 +96,7 @@ const Navbar = () => {
               <li className="mr-3 nav__item" key={index}>
                 <Link
                   href={menu.route}
+                  target={menu.external ? "_blank" : "_self"}
                   className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 focus:outline-none dark:focus:text-gold-500 dark:focus:bg-gold-100 ${
                     router.pathname === menu.route
                       ? "bg-gold-400 text-gold-500 dark:text-gray-700"
