@@ -13,11 +13,6 @@ const Navbar = () => {
     { title: "Products", route: "/products" },
     { title: "Diamonds", route: "/diamonds" },
     { title: "Contact", route: "/contact" },
-    {
-      title: "WhatsApp",
-      route: "https://wa.me/254737605955",
-      external: true,
-    },
   ];
 
   return (
