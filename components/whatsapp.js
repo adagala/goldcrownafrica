@@ -34,7 +34,7 @@ function WhatsApp() {
             <div className="flex gap-2">
               <Link
                 className="px-4 py-1 bg-teal-500 rounded-lg"
-                href="https://wa.me/254737605955"
+                href="https://wa.me/254712832436"
                 target="_blank"
               >
                 Connect
