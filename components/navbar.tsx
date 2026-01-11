@@ -18,6 +18,7 @@ const Navbar = () => {
     { title: "Our Services", route: "/services" },
     { title: "Products", route: "/products" },
     { title: "Diamonds", route: "/diamonds" },
+    { title: "Blog", route: "/blog" },
     { title: "Contact", route: "/contact" },
   ];
 
@@ -98,8 +99,8 @@ const Navbar = () => {
                   href={menu.route}
                   target={menu.external ? "_blank" : "_self"}
                   className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 focus:outline-none dark:focus:text-gold-500 dark:focus:bg-gold-100 ${router.pathname === menu.route
-                      ? "bg-gold-400 text-gold-500 dark:text-gray-700"
-                      : ""
+                    ? "bg-gold-400 text-gold-500 dark:text-gray-700"
+                    : ""
                     }`}
                 >
                   {menu.title}
