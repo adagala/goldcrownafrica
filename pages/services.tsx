@@ -12,8 +12,10 @@ import fourthServiceImg from "../public/img/16.jpeg";
 import fifthServiceImg from "../public/img/10.jpeg";
 import sixthServiceImg from "../public/img/7.jpeg";
 
-const About = () => {
-  const firstService = {
+import { BenefitData } from "../components/data";
+
+const Services = () => {
+  const firstService: BenefitData = {
     title: "Safety Services",
     desc: (
       <div>
@@ -38,7 +40,7 @@ const About = () => {
     image: firstServiceImg,
     bullets: [],
   };
-  const secondService = {
+  const secondService: BenefitData = {
     title: "Assaying Services",
     desc: (
       <div>
@@ -78,7 +80,7 @@ const About = () => {
     image: secondServiceImg,
     bullets: [],
   };
-  const thirdService = {
+  const thirdService: BenefitData = {
     title: "Mineral Mining",
     desc: (
       <div>
@@ -108,7 +110,7 @@ const About = () => {
     bullets: [],
   };
 
-  const fourthService = {
+  const fourthService: BenefitData = {
     title: "Refining Services",
     desc: (
       <div>
@@ -134,7 +136,7 @@ const About = () => {
     image: fourthServiceImg,
     bullets: [],
   };
-  const fifthService = {
+  const fifthService: BenefitData = {
     title: "Global Logistics",
     desc: (
       <div>
@@ -174,7 +176,7 @@ const About = () => {
     image: fifthServiceImg,
     bullets: [],
   };
-  const sixthService = {
+  const sixthService: BenefitData = {
     title: "Security & Storage",
     desc: (
       <div>
@@ -222,4 +224,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Services;

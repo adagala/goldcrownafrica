@@ -33,10 +33,10 @@ const Video = () => {
               height="315"
               src="https://www.youtube.com/embed/V0JNVAucgi4?si=Ab6IsLdn1BtcTWlG&amp;start=20&amp;controls=1&autoplay=1"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen={true}
             ></iframe>
           )}
         </div>

@@ -9,8 +9,10 @@ import firstImg from "../public/img/2.jpeg";
 import secondImg from "../public/img/12.jpeg";
 import thirdImg from "../public/img/6.jpeg";
 
-const About = () => {
-  const topSection = {
+import { BenefitData } from "../components/data";
+
+const Diamonds = () => {
+  const topSection: BenefitData = {
     title: "Polished Diamonds",
     desc: (
       <div>
@@ -25,7 +27,7 @@ const About = () => {
     image: firstImg,
     bullets: [],
   };
-  const middleSection = {
+  const middleSection: BenefitData = {
     title: "Collectibles",
     desc: (
       <div>
@@ -45,7 +47,7 @@ const About = () => {
     image: secondImg,
     bullets: [],
   };
-  const bottomSection = {
+  const bottomSection: BenefitData = {
     title: "Diamond Sorting & Evaluation",
     desc: (
       <div>
@@ -87,4 +89,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Diamonds;

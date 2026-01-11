@@ -4,9 +4,15 @@ import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
 
+interface NavigationItem {
+  title: string;
+  route: string;
+  external?: boolean;
+}
+
 const Navbar = () => {
   const router = useRouter();
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { title: "Home", route: "/" },
     { title: "About", route: "/about" },
     { title: "Our Services", route: "/services" },
@@ -70,9 +76,8 @@ const Navbar = () => {
                         key={index}
                         href={item.route}
                         target={item.external ? "_blank" : "_self"}
-                        className={`w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 dark:focus:bg-gold-100 focus:outline-none ${
-                          router.pathname === item.route ? "text-gold-500" : ""
-                        }`}
+                        className={`w-full px-4 py-2 -ml-4 text-gray-500 rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 dark:focus:bg-gold-100 focus:outline-none ${router.pathname === item.route ? "text-gold-500" : ""
+                          }`}
                       >
                         {item.title}
                       </Link>
@@ -92,11 +97,10 @@ const Navbar = () => {
                 <Link
                   href={menu.route}
                   target={menu.external ? "_blank" : "_self"}
-                  className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 focus:outline-none dark:focus:text-gold-500 dark:focus:bg-gold-100 ${
-                    router.pathname === menu.route
+                  className={`inline-block px-4 py-2 text-lg font-normal text-gray-800 no-underline rounded-md dark:text-gray-300 hover:text-gold-500 focus:text-gold-500 focus:bg-gold-100 focus:outline-none dark:focus:text-gold-500 dark:focus:bg-gold-100 ${router.pathname === menu.route
                       ? "bg-gold-400 text-gold-500 dark:text-gray-700"
                       : ""
-                  }`}
+                    }`}
                 >
                   {menu.title}
                 </Link>

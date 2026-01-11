@@ -9,8 +9,10 @@ import firstImg from "../public/img/11.jpeg";
 import secondImg from "../public/img/14.jpeg";
 import thirdImg from "../public/img/13.jpeg";
 
-const About = () => {
-  const topSection = {
+import { BenefitData } from "../components/data";
+
+const Products = () => {
+  const topSection: BenefitData = {
     title: "",
     desc: (
       <div>
@@ -46,7 +48,7 @@ const About = () => {
     image: firstImg,
     bullets: [],
   };
-  const middleSection = {
+  const middleSection: BenefitData = {
     title: "",
     desc: (
       <div>
@@ -63,7 +65,7 @@ const About = () => {
     image: secondImg,
     bullets: [],
   };
-  const bottomSection = {
+  const bottomSection: BenefitData = {
     title: "",
     desc: (
       <div>
@@ -141,4 +143,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Products;

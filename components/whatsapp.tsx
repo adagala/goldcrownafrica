@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-function WhatsApp() {
+const WhatsApp: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
