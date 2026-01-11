@@ -25,6 +25,6 @@ const Cta = () => {
       </div>
     </Container>
   );
-}
+};
 
 export default Cta;

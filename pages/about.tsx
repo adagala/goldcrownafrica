@@ -6,8 +6,10 @@ import Footer from "../components/footer";
 
 import benefitTwoImg from "../public/img/14.jpeg";
 
+import { BenefitData } from "../components/data";
+
 const About = () => {
-  const data = {
+  const data: BenefitData = {
     title: "About Us",
     desc: (
       <div>

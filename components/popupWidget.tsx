@@ -2,6 +2,16 @@ import React, { useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+  apikey: string;
+  subject: string;
+  from_name: string;
+  botcheck: boolean;
+}
+
 const PopupWidget = () => {
   const {
     register,
@@ -9,7 +19,7 @@ const PopupWidget = () => {
     reset,
     control,
     formState: { errors, isSubmitSuccessful, isSubmitting },
-  } = useForm({
+  } = useForm<FormData>({
     mode: "onTouched",
   });
   const [isSuccess, setIsSuccess] = useState(false);
@@ -17,7 +27,7 @@ const PopupWidget = () => {
 
   const userName = useWatch({ control, name: "name", defaultValue: "Someone" });
 
-  const onSubmit = async (data, e) => {
+  const onSubmit = async (data: FormData, e: any) => {
     console.log(data);
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -156,15 +166,14 @@ const PopupWidget = () => {
                             required: "Full name is required",
                             maxLength: 80,
                           })}
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
-                            errors.name
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-gold-600 ring-gold-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.name
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-gold-600 ring-gold-100"
+                            }`}
                         />
                         {errors.name && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.name.message}
+                            {errors.name.message as React.ReactNode}
                           </div>
                         )}
                       </div>
@@ -187,16 +196,15 @@ const PopupWidget = () => {
                             },
                           })}
                           placeholder="you@company.com"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
-                            errors.email
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-gold-600 ring-gold-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${errors.email
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-gold-600 ring-gold-100"
+                            }`}
                         />
 
                         {errors.email && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.email.message}
+                            {errors.email.message as React.ReactNode}
                           </div>
                         )}
                       </div>
@@ -210,22 +218,21 @@ const PopupWidget = () => {
                         </label>
 
                         <textarea
-                          rows="4"
+                          rows={4}
                           id="message"
                           {...register("message", {
                             required: "Enter your Message",
                           })}
                           placeholder="Your Message"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
-                            errors.message
-                              ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-gold-600 ring-gold-100"
-                          }`}
+                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${errors.message
+                            ? "border-red-600 focus:border-red-600 ring-red-100"
+                            : "border-gray-300 focus:border-gold-600 ring-gold-100"
+                            }`}
                           required
                         ></textarea>
                         {errors.message && (
                           <div className="mt-1 text-sm text-red-400 invalid-feedback">
-                            {errors.message.message}
+                            {errors.message.message as React.ReactNode}
                           </div>
                         )}
                       </div>

@@ -10,7 +10,7 @@ import {
 import Footer from "../components/footer";
 import Container from "../components/container";
 
-const Home = () => {
+const Contact = () => {
   return (
     <>
       <Head>
@@ -74,9 +74,9 @@ const Home = () => {
             width="800"
             height="600"
             // style="border:0;"
-            allowfullscreen=""
+            allowFullScreen={true}
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
           <Footer />
         </div>
@@ -85,7 +85,7 @@ const Home = () => {
   );
 };
 
-function Mark(props) {
+function Mark(props: { children: React.ReactNode }) {
   return (
     <>
       {" "}
@@ -96,4 +96,4 @@ function Mark(props) {
   );
 }
 
-export default Home;
+export default Contact;

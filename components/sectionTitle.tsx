@@ -1,12 +1,18 @@
 import React from "react";
 import Container from "./container";
 
-const SectionTitle = (props) => {
+interface SectionTitleProps {
+  align?: "left" | "center";
+  pretitle?: string;
+  title?: string;
+  children?: React.ReactNode;
+}
+
+const SectionTitle = (props: SectionTitleProps) => {
   return (
     <Container
-      className={`flex w-full flex-col mt-4 ${
-        props.align === "left" ? "" : "items-center justify-center text-center"
-      }`}
+      className={`flex w-full flex-col mt-4 ${props.align === "left" ? "" : "items-center justify-center text-center"
+        }`}
     >
       {props.pretitle && (
         <div className="text-sm font-bold tracking-wider text-gold-600 uppercase">
