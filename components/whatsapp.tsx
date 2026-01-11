@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const WhatsApp: React.FC = () => {
+  const { asPath } = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -12,6 +14,10 @@ const WhatsApp: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  if (asPath.startsWith("/blog")) {
+    return null;
+  }
 
   return (
     <>

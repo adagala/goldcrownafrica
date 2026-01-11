@@ -10,6 +10,7 @@ export default function Footer() {
     { title: "Our Services", route: "/services" },
     { title: "Products", route: "/products" },
     { title: "Diamonds", route: "/diamonds" },
+    { title: "Blog", route: "/blog" },
     { title: "Contact", route: "/contact" },
   ];
   // const legal = ["Terms", "Privacy", "Legal"];
