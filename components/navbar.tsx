@@ -43,7 +43,7 @@ const Navbar = () => {
               <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
                 <Link href="/">
                   <span className="flex items-center space-x-3 text-xl font-serif font-bold tracking-tight text-gray-800 dark:text-white group">
-                    <span className="bg-gold-500 rounded-full p-1 group-hover:rotate-12 transition-transform duration-300">
+                    <span className="rounded-full p-1 group-hover:rotate-12 transition-transform duration-300">
                       <Image
                         src="/img/logo.png"
                         alt="Logo"
@@ -84,19 +84,20 @@ const Navbar = () => {
                 </Disclosure.Button>
 
                 <Disclosure.Panel className="flex flex-wrap w-full my-5 lg:hidden bg-white dark:bg-trueGray-900 absolute left-0 top-full px-6 py-4 shadow-xl border-t border-gray-100 dark:border-white/5">
-                  <>
+                  <div className="flex flex-col w-full">
                     {navigation.map((item, index) => (
-                      <Link
+                      <Disclosure.Button
                         key={index}
+                        as={Link}
                         href={item.route}
                         target={item.external ? "_blank" : "_self"}
                         className={`w-full px-4 py-3 text-lg font-medium transition-colors hover:text-gold-500 ${router.pathname === item.route ? "text-gold-500" : "text-gray-600 dark:text-gray-300"
                           }`}
                       >
                         {item.title}
-                      </Link>
+                      </Disclosure.Button>
                     ))}
-                  </>
+                  </div>
                 </Disclosure.Panel>
               </div>
             </>
