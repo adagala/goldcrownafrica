@@ -29,6 +29,20 @@ const BlogIndex = ({ allPostsData }: BlogIndexProps) => {
                     name="description"
                     content="Latest news, insights, and updates from Gold Crown Africa regarding the precious metals industry."
                 />
+
+                {/* Open Graph / Facebook / LinkedIn */}
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Gold Crown Africa" />
+                <meta property="og:url" content="https://goldcrownafrica.com/blog" />
+                <meta property="og:title" content="Blog | Gold Crown Africa" />
+                <meta property="og:description" content="Latest news, insights, and updates from Gold Crown Africa regarding the precious metals industry." />
+                <meta property="og:image" content="https://goldcrownafrica.com/img/logo.png" />
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Blog | Gold Crown Africa" />
+                <meta name="twitter:description" content="Latest news, insights, and updates from Gold Crown Africa regarding the precious metals industry." />
+                <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
             </Head>
 
             <Navbar />
