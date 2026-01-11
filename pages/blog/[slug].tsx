@@ -34,8 +34,23 @@ const Post = ({ postData }: PostProps) => {
             <Head>
                 <title>{postData.title} | Gold Crown Africa</title>
                 <meta name="description" content={postData.excerpt} />
+
+                {/* Open Graph / Facebook / LinkedIn */}
+                <meta property="og:type" content="article" />
+                <meta property="og:site_name" content="Gold Crown Africa" />
+                <meta property="og:url" content={`https://goldcrownafrica.com/blog/${postData.slug}`} />
+                <meta property="og:title" content={postData.title} />
+                <meta property="og:description" content={postData.excerpt} />
                 {postData.coverImage && (
-                    <meta property="og:image" content={postData.coverImage} />
+                    <meta property="og:image" content={`https://goldcrownafrica.com${postData.coverImage}`} />
+                )}
+
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={postData.title} />
+                <meta name="twitter:description" content={postData.excerpt} />
+                {postData.coverImage && (
+                    <meta name="twitter:image" content={`https://goldcrownafrica.com${postData.coverImage}`} />
                 )}
             </Head>
 

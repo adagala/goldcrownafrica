@@ -14,11 +14,26 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Gold Crown Africa</title>
+        <title>Contact Us | Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
+          content="Get in touch with Gold Crown Africa's headquarters in Nairobi for inquiries about mineral sourcing, refining services, or partnerships."
         />
+
+        {/* Open Graph / Facebook / LinkedIn */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Gold Crown Africa" />
+        <meta property="og:url" content="https://goldcrownafrica.com/contact" />
+        <meta property="og:title" content="Contact Us | Gold Crown Africa" />
+        <meta property="og:description" content="Contact our Nairobi headquarters for inquiries about mineral sourcing and services." />
+        <meta property="og:image" content="https://goldcrownafrica.com/img/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Gold Crown Africa" />
+        <meta name="twitter:description" content="Contact our Nairobi headquarters for inquiries about mineral sourcing and services." />
+        <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
+
         <link rel="icon" href="/favicon.png" />
       </Head>
 

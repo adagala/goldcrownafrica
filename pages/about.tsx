@@ -44,11 +44,26 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>Gold Crown Africa</title>
+        <title>About Us | Gold Crown Africa</title>
         <meta
           name="description"
-          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
+          content="Learn about Gold Crown Africa's 30 years of experience in the African mining sector and our commitment to professional management and ethical operations."
         />
+
+        {/* Open Graph / Facebook / LinkedIn */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Gold Crown Africa" />
+        <meta property="og:url" content="https://goldcrownafrica.com/about" />
+        <meta property="og:title" content="About Us | Gold Crown Africa" />
+        <meta property="og:description" content="30 years of experience in the African mining sector. Committed to professional and ethical operations." />
+        <meta property="og:image" content="https://goldcrownafrica.com/img/14.jpeg" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Gold Crown Africa" />
+        <meta name="twitter:description" content="30 years of experience in the African mining sector." />
+        <meta name="twitter:image" content="https://goldcrownafrica.com/img/14.jpeg" />
+
         <link rel="icon" href="/favicon.png" />
       </Head>
 

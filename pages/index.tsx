@@ -13,11 +13,26 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Gold Crown Africa</title>
+        <title>Gold Crown Africa | Premium Mineral Sourcing & Services</title>
         <meta
           name="description"
-          content="Gold Crown Africa is the best mineral sourcing company in africa that deals with gold, rough diamonds and copper cathodes. We also deal with refining services, Assayings services, Security Services, mineral mining etc"
+          content="Gold Crown Africa is the leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices and professional services."
         />
+
+        {/* Open Graph / Facebook / LinkedIn */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Gold Crown Africa" />
+        <meta property="og:url" content="https://goldcrownafrica.com/" />
+        <meta property="og:title" content="Gold Crown Africa | Premium Mineral Sourcing & Services" />
+        <meta property="og:description" content="Leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices." />
+        <meta property="og:image" content="https://goldcrownafrica.com/img/logo.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gold Crown Africa | Premium Mineral Sourcing & Services" />
+        <meta name="twitter:description" content="Leading mineral sourcing company in Africa specializing in gold, diamonds, and copper cathodes." />
+        <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
+
         <link rel="icon" href="/favicon.png?v=0.0.1" />
       </Head>
 
