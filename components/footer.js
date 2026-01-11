@@ -25,7 +25,7 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-2xl font-medium text-gold-500 dark:text-gray-100"
               >
                 <Image
-                  src="/img/logo.svg"
+                  src="/img/logo.png"
                   alt="N"
                   width="32"
                   height="32"
