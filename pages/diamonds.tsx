@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
 
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -95,7 +94,6 @@ const Diamonds = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar />
       <Benefits data={topSection} />
       <Benefits imgPos="right" data={middleSection} />
       <Benefits data={bottomSection} />

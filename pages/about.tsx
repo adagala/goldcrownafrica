@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
 
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -67,7 +66,6 @@ const About = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar />
       <Benefits imgPos="right" data={data} />
       <Footer />
     </>

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Link from "next/link";
-import Navbar from "../components/navbar";
 
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -227,7 +226,6 @@ const Services = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar />
       <Benefits data={firstService} />
       <Benefits imgPos="right" data={secondService} />
       <Benefits data={thirdService} />

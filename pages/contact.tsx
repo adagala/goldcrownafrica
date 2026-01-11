@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 import {
   EnvelopeIcon,
@@ -37,7 +36,6 @@ const Contact = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar />
       <SectionTitle pretitle="Contact Us" title="Visit Our Location">
         Anyday Working Hours
       </SectionTitle>
@@ -93,9 +91,9 @@ const Contact = () => {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-          <Footer />
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Hero from "../components/hero";
-import Navbar from "../components/navbar";
 import SectionTitle from "../components/sectionTitle";
 
 import { benefitOne, benefitTwo, benefitThree } from "../components/data";
@@ -36,7 +35,6 @@ const Home = () => {
         <link rel="icon" href="/favicon.png?v=0.0.1" />
       </Head>
 
-      <Navbar />
       <Hero />
       <SectionTitle
         pretitle="Gold Crown Africa Benefits"

@@ -1,36 +1,70 @@
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/logo.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <>
-      <Container className="flex flex-wrap ">
+      <Container className="flex flex-wrap pb-10">
         <div className="flex items-center w-full lg:w-1/2">
           <div className="max-w-2xl mb-8">
-            <h1 className="text-4xl font-bold leading-snug tracking-tight text-gray-800 lg:text-4xl lg:leading-tight xl:text-6xl xl:leading-tight dark:text-white">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-5xl font-serif font-bold leading-tight tracking-tight text-gray-800 lg:text-5xl lg:leading-tight xl:text-7xl xl:leading-tight dark:text-white"
+            >
               Gold Crown Africa
-            </h1>
-            <p className="py-5 text-xl leading-normal text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-300">
-              Gold Crown Africa is the best mineral sourcing company in Africa
-              that deals with gold, rough diamonds, copper cathodes, rubies,
-              metiorite and diamonds among other products.
-            </p>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="py-6 text-lg leading-relaxed text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-400 font-sans"
+            >
+              The premier mineral sourcing partner in Africa. We specialize in ethically sourced gold, diamonds, and precious gemstones, bridging local excellence with global markets.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="flex flex-col items-start space-y-3 sm:space-x-4 sm:space-y-0 sm:items-center sm:flex-row"
+            >
+              <a
+                href="#products"
+                className="px-8 py-4 text-lg font-medium text-center text-white bg-gold-600 rounded-md transition-all hover:bg-gold-500 hover:shadow-lg hover:shadow-gold-500/20"
+              >
+                Explore Gems
+              </a>
+              <a
+                href="#about"
+                className="px-8 py-4 text-lg font-medium text-center text-gray-800 dark:text-white border border-gray-200 dark:border-white/10 rounded-md hover:bg-gray-50 dark:hover:bg-white/5 transition-all"
+              >
+                Our Legacy
+              </a>
+            </motion.div>
           </div>
         </div>
-        <div className="flex items-center justify-center w-full lg:w-1/2">
-          <div className="">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="flex items-center justify-center w-full lg:w-1/2 relative"
+        >
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-gold-400 to-gold-600 rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
             <Image
               src={heroImg}
-              // width="616"
-              // height="617"
-              className={"object-cover"}
-              alt="Hero Illustration"
+              width="500"
+              height="500"
+              className={"relative object-cover rounded-full p-8"}
+              alt="Gold Crown Africa Logo"
               loading="eager"
               placeholder="blur"
             />
           </div>
-        </div>
+        </motion.div>
       </Container>
     </>
   );

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
 
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
@@ -111,7 +110,6 @@ const Products = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <Navbar />
       <Benefits data={topSection} />
       <Container className="text-lg lg:text-xl xl:text-xl">
         Escrow Account is held in Nairobi Republic of Kenya this is to make sure

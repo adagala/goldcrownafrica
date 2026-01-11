@@ -1,95 +1,60 @@
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
+import { motion } from "framer-motion";
 
 const Testimonials = () => {
+  const highlights = [
+    {
+      title: "Gold Trading",
+      content: "All our operations are licensed for mining, purchase, and export for the countries of origin by the local legal and governmental authorities. We mine and source high-purity gold across Western and Eastern Africa in various forms including bars, nuggets, and ingots.",
+      icon: "✨"
+    },
+    {
+      title: "Diamonds Trading",
+      content: "We source ethically mined rough diamonds from premier Sub-Saharan regions. Our gemologists ensure every stone meets the highest standards for clarity and quality, delivered strictly under Kimberly Process protocols for our global clientele.",
+      icon: "💎"
+    },
+    {
+      title: "Critical Minerals",
+      content: "Specializing in the strategic supply of Copper Cathodes and industrial minerals from DRC and Zambia. We provide a full-spectrum logistics service, ensuring seamless door-to-door delivery for refined production and mineral ores.",
+      icon: "⚒️"
+    }
+  ];
+
   return (
     <Container>
-      <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-        <div className="lg:col-span-2 xl:col-auto">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <div className="">
-              <Mark>Gold Trading</Mark>
-              <div className="mt-2 text-gray-600 dark:text-gray-300">
-                All our operations are licenced for mining, purchase and export
-                for the countries of origin by the local legal and governmental
-                authorities. We are Mining and purchasing Rough Gold in several
-                localities in Western and Eastern Africa. Gold is purchased in
-                several forms as sand, dust, nugget, bars and ingots.
+      <div className="grid gap-8 lg:grid-cols-2 xl:grid-cols-3">
+        {highlights.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            className="flex flex-col justify-between w-full h-full bg-white dark:bg-trueGray-800/50 border border-gray-100 dark:border-white/5 px-10 rounded-3xl py-12 shadow-sm hover:shadow-xl hover:shadow-gold-500/5 transition-all duration-300 group"
+          >
+            <div>
+              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">
+                {item.icon}
               </div>
+              <h3 className="text-2xl font-serif font-bold text-gray-800 dark:text-white mb-4">
+                {item.title}
+              </h3>
+              <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400 font-sans">
+                {item.content}
+              </p>
             </div>
-          </div>
-        </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <div className="">
-              <Mark>Diamonds Trading</Mark>
-              <div className="mt-2 text-gray-600 dark:text-gray-300">
-                We source Rough Diamonds from several Sub-Saharan countries for
-                further cutting and polishing in our factories and facilities
-                for our client. Our deliveries are made under Kimberly protocol
-                terms and conditions by our licensed companies. Our gemologists
-                are ready to examine and sort the rough stones according to the
-                usual standards.
-              </div>
+            <div className="mt-8">
+              <span className="text-sm font-bold text-gold-600 uppercase tracking-widest cursor-pointer hover:text-gold-500 transition-colors">
+                Learn More &rarr;
+              </span>
             </div>
-          </div>
-        </div>
-        <div className="">
-          <div className="flex flex-col justify-between w-full h-full bg-gray-100 px-14 rounded-2xl py-14 dark:bg-trueGray-800">
-            <div className="">
-              <Mark>Copper Cathode Trading</Mark>
-              <div className="mt-2 text-gray-600 dark:text-gray-300">
-                We offer LME non-registered production of DRC and Zambia
-                refineries under specific terms and conditions. Cathodes are
-                sold including full range of services door to door and we can
-                satisfy only limited sector of buyers as we are obligated to
-                refineries to support them with the copper ore and finance their
-                production.
-              </div>
-            </div>
-          </div>
-        </div>
+          </motion.div>
+        ))}
       </div>
     </Container>
   );
 };
-
-interface AvatarProps {
-  image: string | any; // Could be StaticImageData
-  name: string;
-  title: string;
-}
-
-function Avatar(props: AvatarProps) {
-  return (
-    <div className="flex items-center mt-8 space-x-3">
-      <div className="flex-shrink-0 overflow-hidden rounded-full w-14 h-14">
-        <Image
-          src={props.image}
-          width="40"
-          height="40"
-          alt="Avatar"
-          placeholder="blur"
-        />
-      </div>
-      <div>
-        <div className="text-lg font-medium">{props.name}</div>
-        <div className="text-gray-600 dark:text-gray-400">{props.title}</div>
-      </div>
-    </div>
-  );
-}
-
-function Mark(props: { children: React.ReactNode }) {
-  return (
-    <>
-      {" "}
-      <mark className="text-xl font-semibold text-gold-800 bg-gold-100 rounded-md ring-gold-100 ring-4 dark:ring-gold-900 dark:bg-gold-900 dark:text-gold-200">
-        {props.children}
-      </mark>{" "}
-    </>
-  );
-}
 
 export default Testimonials;

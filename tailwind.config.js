@@ -26,10 +26,10 @@ module.exports = {
           950: "#1A1305",
         },
       },
-    },
-    fontFamily: {
-      sans: ["Inter", ...defaultTheme.fontFamily.sans],
-      stock: [defaultTheme.fontFamily.sans],
+      fontFamily: {
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        serif: ["Playfair Display", ...defaultTheme.fontFamily.serif],
+      },
     },
   },
   variants: {
@@ -39,5 +39,4 @@ module.exports = {
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
   ],
-
 };

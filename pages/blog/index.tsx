@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import Container from "../../components/container";
 import { getSortedPostsData, PostData } from "../../lib/posts";
@@ -45,7 +44,6 @@ const BlogIndex = ({ allPostsData }: BlogIndexProps) => {
                 <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
             </Head>
 
-            <Navbar />
 
             <Container>
                 <div className="py-24">
