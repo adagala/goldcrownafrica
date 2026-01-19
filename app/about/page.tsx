@@ -1,13 +1,35 @@
-import Head from "next/head";
+import { Metadata } from "next";
+import Benefits from "../../components/benefits";
+import Footer from "../../components/footer";
+import benefitTwoImg from "../../public/img/14.jpeg";
+import { BenefitData } from "../../components/data";
 
-import Benefits from "../components/benefits";
-import Footer from "../components/footer";
+export const metadata: Metadata = {
+  title: "About Us | Gold Crown Africa",
+  description:
+    "Learn about Gold Crown Africa's 30 years of experience in the African mining sector and our commitment to professional management and ethical operations.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/about",
+    title: "About Us | Gold Crown Africa",
+    description:
+      "30 years of experience in the African mining sector. Committed to professional and ethical operations.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/14.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Gold Crown Africa",
+    description: "30 years of experience in the African mining sector.",
+    images: ["https://goldcrownafrica.com/img/14.jpeg"],
+  },
+};
 
-import benefitTwoImg from "../public/img/14.jpeg";
-
-import { BenefitData } from "../components/data";
-
-const About = () => {
+export default function About() {
   const data: BenefitData = {
     title: "About Us",
     desc: (
@@ -40,36 +62,11 @@ const About = () => {
     image: benefitTwoImg,
     bullets: [],
   };
+
   return (
     <>
-      <Head>
-        <title>About Us | Gold Crown Africa</title>
-        <meta
-          name="description"
-          content="Learn about Gold Crown Africa's 30 years of experience in the African mining sector and our commitment to professional management and ethical operations."
-        />
-
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/about" />
-        <meta property="og:title" content="About Us | Gold Crown Africa" />
-        <meta property="og:description" content="30 years of experience in the African mining sector. Committed to professional and ethical operations." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/14.jpeg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Gold Crown Africa" />
-        <meta name="twitter:description" content="30 years of experience in the African mining sector." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/14.jpeg" />
-
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
       <Benefits imgPos="right" data={data} />
       <Footer />
     </>
   );
-};
-
-export default About;
+}

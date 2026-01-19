@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import ThemeChanger from "./DarkSwitch";
 import Image from "next/image";
 import { Disclosure } from "@headlessui/react";
@@ -12,7 +14,7 @@ interface NavigationItem {
 }
 
 const Navbar = () => {
-  const router = useRouter();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -34,7 +36,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "py-4 glass shadow-sm" : "py-8 bg-transparent"}`}>
+    <div
+      className={`fixed top-0 z-50 w-full transition-all duration-300 ${isScrolled ? "py-4 glass shadow-sm" : "py-8 bg-transparent"}`}
+    >
       <nav className="container relative flex flex-wrap items-center justify-between mx-auto lg:justify-between px-6 xl:px-0">
         {/* Logo  */}
         <Disclosure>
@@ -91,8 +95,11 @@ const Navbar = () => {
                         as={Link}
                         href={item.route}
                         target={item.external ? "_blank" : "_self"}
-                        className={`w-full px-4 py-3 text-lg font-medium transition-colors hover:text-gold-500 ${router.pathname === item.route ? "text-gold-500" : "text-gray-600 dark:text-gray-300"
-                          }`}
+                        className={`w-full px-4 py-3 text-lg font-medium transition-colors hover:text-gold-500 ${
+                          pathname === item.route
+                            ? "text-gold-500"
+                            : "text-gray-600 dark:text-gray-300"
+                        }`}
                       >
                         {item.title}
                       </Disclosure.Button>
@@ -112,13 +119,16 @@ const Navbar = () => {
                 <Link
                   href={menu.route}
                   target={menu.external ? "_blank" : "_self"}
-                  className={`relative px-3 py-1 text-base font-medium transition-all duration-300 hover:text-gold-500 group ${router.pathname === menu.route
-                    ? "text-gold-500"
-                    : "text-gray-700 dark:text-gray-300"
-                    }`}
+                  className={`relative px-3 py-1 text-base font-medium transition-all duration-300 hover:text-gold-500 group ${
+                    pathname === menu.route
+                      ? "text-gold-500"
+                      : "text-gray-700 dark:text-gray-300"
+                  }`}
                 >
                   {menu.title}
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-gold-500 transition-transform duration-300 origin-left ${router.pathname === menu.route ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}></span>
+                  <span
+                    className={`absolute bottom-0 left-0 w-full h-0.5 bg-gold-500 transition-transform duration-300 origin-left ${pathname === menu.route ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`}
+                  ></span>
                 </Link>
               </li>
             ))}
@@ -127,7 +137,10 @@ const Navbar = () => {
 
         <div className="hidden mr-3 space-x-4 lg:flex items-center">
           <ThemeChanger />
-          <Link href="/contact" className="px-5 py-2 text-sm font-semibold text-white bg-gold-600 rounded-full hover:bg-gold-500 transition-all shadow-md hover:shadow-gold-500/20">
+          <Link
+            href="/contact"
+            className="px-5 py-2 text-sm font-semibold text-white bg-gold-600 rounded-full hover:bg-gold-500 transition-all shadow-md hover:shadow-gold-500/20"
+          >
             Get in Touch
           </Link>
         </div>

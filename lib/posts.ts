@@ -1,10 +1,10 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
-const postsDirectory = path.join(process.cwd(), 'content/blog');
+const postsDirectory = path.join(process.cwd(), "content/blog");
 
 export interface PostData {
   slug: string;
@@ -25,27 +25,32 @@ export function getSortedPostsData(): PostData[] {
   // Get file names under /content/blog
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
       // Remove ".md" from file name to get slug
-      const slug = fileName.replace(/\.md$/, '');
+      const slug = fileName.replace(/\.md$/, "");
 
       // Read markdown file as string
       const fullPath = path.join(postsDirectory, fileName);
-      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const fileContents = fs.readFileSync(fullPath, "utf8");
 
       // Use gray-matter to parse the post metadata section
       const matterResult = matter(fileContents);
 
       return {
         slug,
-        ...(matterResult.data as { title: string; date: string; excerpt: string; coverImage: string }),
+        ...(matterResult.data as {
+          title: string;
+          date: string;
+          excerpt: string;
+          coverImage: string;
+        }),
       };
     });
 
   // Sort posts by date
-  const today = new Date().toISOString().split('T')[0];
-  
+  const today = new Date().toISOString().split("T")[0];
+
   return allPostsData
     .filter((post) => post.date <= today)
     .sort((a, b) => {
@@ -60,19 +65,28 @@ export function getSortedPostsData(): PostData[] {
 export function getAllPostSlugs() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
+    .filter((fileName) => fileName.endsWith(".md"))
     .map((fileName) => {
       return {
         params: {
-          slug: fileName.replace(/\.md$/, ''),
+          slug: fileName.replace(/\.md$/, ""),
         },
       };
     });
 }
 
+export function getPostSlugs() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  return fileNames
+    .filter((fileName) => fileName.endsWith(".md"))
+    .map((fileName) => ({
+      slug: fileName.replace(/\.md$/, ""),
+    }));
+}
+
 export async function getPostData(slug: string): Promise<PostData> {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const fileContents = fs.readFileSync(fullPath, "utf8");
 
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
@@ -87,6 +101,11 @@ export async function getPostData(slug: string): Promise<PostData> {
   return {
     slug,
     contentHtml,
-    ...(matterResult.data as { title: string; date: string; excerpt: string; coverImage: string }),
+    ...(matterResult.data as {
+      title: string;
+      date: string;
+      excerpt: string;
+      coverImage: string;
+    }),
   };
 }

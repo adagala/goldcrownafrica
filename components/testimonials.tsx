@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import Container from "./container";
@@ -7,19 +9,22 @@ const Testimonials = () => {
   const highlights = [
     {
       title: "Gold Trading",
-      content: "All our operations are licensed for mining, purchase, and export for the countries of origin by the local legal and governmental authorities. We mine and source high-purity gold across Western and Eastern Africa in various forms including bars, nuggets, and ingots.",
-      icon: "✨"
+      content:
+        "All our operations are licensed for mining, purchase, and export for the countries of origin by the local legal and governmental authorities. We mine and source high-purity gold across Western and Eastern Africa in various forms including bars, nuggets, and ingots.",
+      icon: "✨",
     },
     {
       title: "Diamonds Trading",
-      content: "We source ethically mined rough diamonds from premier Sub-Saharan regions. Our gemologists ensure every stone meets the highest standards for clarity and quality, delivered strictly under Kimberly Process protocols for our global clientele.",
-      icon: "💎"
+      content:
+        "We source ethically mined rough diamonds from premier Sub-Saharan regions. Our gemologists ensure every stone meets the highest standards for clarity and quality, delivered strictly under Kimberly Process protocols for our global clientele.",
+      icon: "💎",
     },
     {
       title: "Critical Minerals",
-      content: "Specializing in the strategic supply of Copper Cathodes and industrial minerals from DRC and Zambia. We provide a full-spectrum logistics service, ensuring seamless door-to-door delivery for refined production and mineral ores.",
-      icon: "⚒️"
-    }
+      content:
+        "Specializing in the strategic supply of Copper Cathodes and industrial minerals from DRC and Zambia. We provide a full-spectrum logistics service, ensuring seamless door-to-door delivery for refined production and mineral ores.",
+      icon: "⚒️",
+    },
   ];
 
   return (

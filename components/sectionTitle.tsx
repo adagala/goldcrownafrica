@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Container from "./container";
 import { motion } from "framer-motion";
@@ -12,8 +14,9 @@ interface SectionTitleProps {
 const SectionTitle = (props: SectionTitleProps) => {
   return (
     <Container
-      className={`flex w-full flex-col mt-4 ${props.align === "left" ? "" : "items-center justify-center text-center"
-        }`}
+      className={`flex w-full flex-col mt-4 ${
+        props.align === "left" ? "" : "items-center justify-center text-center"
+      }`}
     >
       {props.pretitle && (
         <motion.div

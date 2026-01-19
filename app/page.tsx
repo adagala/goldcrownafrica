@@ -1,40 +1,40 @@
-import Head from "next/head";
+import { Metadata } from "next";
 import Hero from "../components/hero";
 import SectionTitle from "../components/sectionTitle";
-
 import { benefitOne, benefitTwo, benefitThree } from "../components/data";
 import Benefits from "../components/benefits";
 import Footer from "../components/footer";
 import Testimonials from "../components/testimonials";
-import diamondsImg from "../public/img/9.jpeg";
 
-const Home = () => {
+export const metadata: Metadata = {
+  title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
+  description:
+    "Gold Crown Africa is the leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices and professional services.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/",
+    title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
+    description:
+      "Leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/logo.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
+    description:
+      "Leading mineral sourcing company in Africa specializing in gold, diamonds, and copper cathodes.",
+    images: ["https://goldcrownafrica.com/img/logo.png"],
+  },
+};
+
+export default function Home() {
   return (
     <>
-      <Head>
-        <title>Gold Crown Africa | Premium Mineral Sourcing & Services</title>
-        <meta
-          name="description"
-          content="Gold Crown Africa is the leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices and professional services."
-        />
-
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/" />
-        <meta property="og:title" content="Gold Crown Africa | Premium Mineral Sourcing & Services" />
-        <meta property="og:description" content="Leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/logo.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gold Crown Africa | Premium Mineral Sourcing & Services" />
-        <meta name="twitter:description" content="Leading mineral sourcing company in Africa specializing in gold, diamonds, and copper cathodes." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
-
-        <link rel="icon" href="/favicon.png?v=0.0.1" />
-      </Head>
-
       <Hero />
       <SectionTitle
         pretitle="Gold Crown Africa Benefits"
@@ -69,6 +69,4 @@ const Home = () => {
       <Footer />
     </>
   );
-};
-
-export default Home;
+}

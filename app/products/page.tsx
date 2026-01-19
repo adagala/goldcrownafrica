@@ -1,16 +1,38 @@
-import Head from "next/head";
+import { Metadata } from "next";
+import Benefits from "../../components/benefits";
+import Footer from "../../components/footer";
+import Container from "../../components/container";
+import firstImg from "../../public/img/11.jpeg";
+import secondImg from "../../public/img/14.jpeg";
+import thirdImg from "../../public/img/13.jpeg";
+import { BenefitData } from "../../components/data";
 
-import Benefits from "../components/benefits";
-import Footer from "../components/footer";
-import Container from "../components/container";
+export const metadata: Metadata = {
+  title: "Mineral Products | Gold Crown Africa",
+  description:
+    "High-quality gold, rough diamonds, and copper cathodes sourced directly from licensed mining operations across East and West Africa.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/products",
+    title: "Mineral Products | Gold Crown Africa",
+    description:
+      "High-quality gold, rough diamonds, and copper cathodes sourced from licensed mining operations.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/11.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mineral Products | Gold Crown Africa",
+    description: "High-quality gold, rough diamonds, and copper cathodes.",
+    images: ["https://goldcrownafrica.com/img/11.jpeg"],
+  },
+};
 
-import firstImg from "../public/img/11.jpeg";
-import secondImg from "../public/img/14.jpeg";
-import thirdImg from "../public/img/13.jpeg";
-
-import { BenefitData } from "../components/data";
-
-const Products = () => {
+export default function Products() {
   const topSection: BenefitData = {
     title: "",
     desc: (
@@ -84,32 +106,9 @@ const Products = () => {
     image: thirdImg,
     bullets: [],
   };
+
   return (
     <>
-      <Head>
-        <title>Mineral Products | Gold Crown Africa</title>
-        <meta
-          name="description"
-          content="High-quality gold, rough diamonds, and copper cathodes sourced directly from licensed mining operations across East and West Africa."
-        />
-
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/products" />
-        <meta property="og:title" content="Mineral Products | Gold Crown Africa" />
-        <meta property="og:description" content="High-quality gold, rough diamonds, and copper cathodes sourced from licensed mining operations." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/11.jpeg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mineral Products | Gold Crown Africa" />
-        <meta name="twitter:description" content="High-quality gold, rough diamonds, and copper cathodes." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/11.jpeg" />
-
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
       <Benefits data={topSection} />
       <Container className="text-lg lg:text-xl xl:text-xl">
         Escrow Account is held in Nairobi Republic of Kenya this is to make sure
@@ -154,6 +153,4 @@ const Products = () => {
       <Footer />
     </>
   );
-};
-
-export default Products;
+}

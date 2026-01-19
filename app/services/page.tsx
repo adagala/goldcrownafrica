@@ -1,19 +1,42 @@
-import Head from "next/head";
+import { Metadata } from "next";
 import Link from "next/link";
+import Benefits from "../../components/benefits";
+import Footer from "../../components/footer";
+import firstServiceImg from "../../public/img/5.jpeg";
+import secondServiceImg from "../../public/img/3.jpeg";
+import thirdServiceImg from "../../public/img/17.jpeg";
+import fourthServiceImg from "../../public/img/16.jpeg";
+import fifthServiceImg from "../../public/img/10.jpeg";
+import sixthServiceImg from "../../public/img/7.jpeg";
+import { BenefitData } from "../../components/data";
 
-import Benefits from "../components/benefits";
-import Footer from "../components/footer";
+export const metadata: Metadata = {
+  title: "Professional Mining Services | Gold Crown Africa",
+  description:
+    "Comprehensive services including smelting, assaying, refining, mineral mining, global logistics, and specialized security for the precious metals industry.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/services",
+    title: "Professional Mining Services | Gold Crown Africa",
+    description:
+      "Smelting, assaying, refining, mineral mining, global logistics, and specialized security services.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/5.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Professional Mining Services | Gold Crown Africa",
+    description:
+      "Smelting, assaying, refining, mineral mining, global logistics, and specialized security services.",
+    images: ["https://goldcrownafrica.com/img/5.jpeg"],
+  },
+};
 
-import firstServiceImg from "../public/img/5.jpeg";
-import secondServiceImg from "../public/img/3.jpeg";
-import thirdServiceImg from "../public/img/17.jpeg";
-import fourthServiceImg from "../public/img/16.jpeg";
-import fifthServiceImg from "../public/img/10.jpeg";
-import sixthServiceImg from "../public/img/7.jpeg";
-
-import { BenefitData } from "../components/data";
-
-const Services = () => {
+export default function Services() {
   const firstService: BenefitData = {
     title: "Safety Services",
     desc: (
@@ -98,7 +121,7 @@ const Services = () => {
         <div className="my-5">
           Our prices are discounted, but not dreams coming from internet
           business World wide. As we find most of those prices unrealistic, we
-          don’t work with every body, but have own production and do not argue
+          don't work with every body, but have own production and do not argue
           with chain of brokers and intermediaries. Mining is the only
           insurance; we will always have direct access to rough materials. All
           other experiences with mining substitution failed very soon.
@@ -200,32 +223,9 @@ const Services = () => {
     image: sixthServiceImg,
     bullets: [],
   };
+
   return (
     <>
-      <Head>
-        <title>Professional Mining Services | Gold Crown Africa</title>
-        <meta
-          name="description"
-          content="Comprehensive services including smelting, assaying, refining, mineral mining, global logistics, and specialized security for the precious metals industry."
-        />
-
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/services" />
-        <meta property="og:title" content="Professional Mining Services | Gold Crown Africa" />
-        <meta property="og:description" content="Smelting, assaying, refining, mineral mining, global logistics, and specialized security services." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/5.jpeg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Professional Mining Services | Gold Crown Africa" />
-        <meta name="twitter:description" content="Smelting, assaying, refining, mineral mining, global logistics, and specialized security services." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/5.jpeg" />
-
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
       <Benefits data={firstService} />
       <Benefits imgPos="right" data={secondService} />
       <Benefits data={thirdService} />
@@ -235,6 +235,4 @@ const Services = () => {
       <Footer />
     </>
   );
-};
-
-export default Services;
+}

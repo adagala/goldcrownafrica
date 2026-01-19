@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Container from "./container";
 import heroImg from "../public/img/logo.png";
@@ -23,7 +25,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="py-6 text-lg leading-relaxed text-gray-500 lg:text-xl xl:text-2xl dark:text-gray-400 font-sans"
             >
-              The premier mineral sourcing partner in Africa. We specialize in ethically sourced gold, diamonds, and precious gemstones, bridging local excellence with global markets.
+              The premier mineral sourcing partner in Africa. We specialize in
+              ethically sourced gold, diamonds, and precious gemstones, bridging
+              local excellence with global markets.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

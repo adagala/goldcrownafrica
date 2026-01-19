@@ -1,16 +1,37 @@
-import Head from "next/head";
+import { Metadata } from "next";
+import Benefits from "../../components/benefits";
+import Footer from "../../components/footer";
+import firstImg from "../../public/img/2.jpeg";
+import secondImg from "../../public/img/12.jpeg";
+import thirdImg from "../../public/img/6.jpeg";
+import { BenefitData } from "../../components/data";
 
-import Benefits from "../components/benefits";
-import Footer from "../components/footer";
-import Container from "../components/container";
+export const metadata: Metadata = {
+  title: "Polished & Collectible Diamonds | Gold Crown Africa",
+  description:
+    "Trading certified polished diamonds and rare collectible stones with expert sorting, evaluation, and international certification.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/diamonds",
+    title: "Polished & Collectible Diamonds | Gold Crown Africa",
+    description:
+      "Certified polished diamonds and rare collectible stones with expert sorting and evaluation.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/2.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Polished & Collectible Diamonds | Gold Crown Africa",
+    description: "Certified polished diamonds and rare collectible stones.",
+    images: ["https://goldcrownafrica.com/img/2.jpeg"],
+  },
+};
 
-import firstImg from "../public/img/2.jpeg";
-import secondImg from "../public/img/12.jpeg";
-import thirdImg from "../public/img/6.jpeg";
-
-import { BenefitData } from "../components/data";
-
-const Diamonds = () => {
+export default function Diamonds() {
   const topSection: BenefitData = {
     title: "Polished Diamonds",
     desc: (
@@ -68,38 +89,13 @@ const Diamonds = () => {
     image: thirdImg,
     bullets: [],
   };
+
   return (
     <>
-      <Head>
-        <title>Polished & Collectible Diamonds | Gold Crown Africa</title>
-        <meta
-          name="description"
-          content="Trading certified polished diamonds and rare collectible stones with expert sorting, evaluation, and international certification."
-        />
-
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/diamonds" />
-        <meta property="og:title" content="Polished & Collectible Diamonds | Gold Crown Africa" />
-        <meta property="og:description" content="Certified polished diamonds and rare collectible stones with expert sorting and evaluation." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/2.jpeg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Polished & Collectible Diamonds | Gold Crown Africa" />
-        <meta name="twitter:description" content="Certified polished diamonds and rare collectible stones." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/2.jpeg" />
-
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
       <Benefits data={topSection} />
       <Benefits imgPos="right" data={middleSection} />
       <Benefits data={bottomSection} />
       <Footer />
     </>
   );
-};
-
-export default Diamonds;
+}

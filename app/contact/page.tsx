@@ -1,41 +1,53 @@
-import Head from "next/head";
-import SectionTitle from "../components/sectionTitle";
+import { Metadata } from "next";
+import SectionTitle from "../../components/sectionTitle";
 import {
   EnvelopeIcon,
   MapPinIcon,
   PhoneArrowDownLeftIcon,
 } from "@heroicons/react/24/outline";
+import Footer from "../../components/footer";
+import Container from "../../components/container";
 
-import Footer from "../components/footer";
-import Container from "../components/container";
+export const metadata: Metadata = {
+  title: "Contact Us | Gold Crown Africa",
+  description:
+    "Get in touch with Gold Crown Africa's headquarters in Nairobi for inquiries about mineral sourcing, refining services, or partnerships.",
+  openGraph: {
+    type: "website",
+    siteName: "Gold Crown Africa",
+    url: "https://goldcrownafrica.com/contact",
+    title: "Contact Us | Gold Crown Africa",
+    description:
+      "Contact our Nairobi headquarters for inquiries about mineral sourcing and services.",
+    images: [
+      {
+        url: "https://goldcrownafrica.com/img/logo.png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Gold Crown Africa",
+    description:
+      "Contact our Nairobi headquarters for inquiries about mineral sourcing and services.",
+    images: ["https://goldcrownafrica.com/img/logo.png"],
+  },
+};
 
-const Contact = () => {
+function Mark(props: { children: React.ReactNode }) {
   return (
     <>
-      <Head>
-        <title>Contact Us | Gold Crown Africa</title>
-        <meta
-          name="description"
-          content="Get in touch with Gold Crown Africa's headquarters in Nairobi for inquiries about mineral sourcing, refining services, or partnerships."
-        />
+      {" "}
+      <mark className="flex gap-1 text-gold-800 bg-gold-100 rounded-md ring-gold-100 ring-4 dark:ring-gold-900 dark:bg-gold-900 dark:text-gold-200">
+        {props.children}
+      </mark>{" "}
+    </>
+  );
+}
 
-        {/* Open Graph / Facebook / LinkedIn */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Gold Crown Africa" />
-        <meta property="og:url" content="https://goldcrownafrica.com/contact" />
-        <meta property="og:title" content="Contact Us | Gold Crown Africa" />
-        <meta property="og:description" content="Contact our Nairobi headquarters for inquiries about mineral sourcing and services." />
-        <meta property="og:image" content="https://goldcrownafrica.com/img/logo.png" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Gold Crown Africa" />
-        <meta name="twitter:description" content="Contact our Nairobi headquarters for inquiries about mineral sourcing and services." />
-        <meta name="twitter:image" content="https://goldcrownafrica.com/img/logo.png" />
-
-        <link rel="icon" href="/favicon.png" />
-      </Head>
-
+export default function Contact() {
+  return (
+    <>
       <SectionTitle pretitle="Contact Us" title="Visit Our Location">
         Anyday Working Hours
       </SectionTitle>
@@ -86,7 +98,6 @@ const Contact = () => {
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31911.3294051088!2d36.800147!3d-1.218449!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f17e27fc4fde3%3A0x1464d3dd2e44a14e!2sKitisuru%2C%20Nairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1714734702481!5m2!1sen!2sus"
             width="800"
             height="600"
-            // style="border:0;"
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -96,17 +107,4 @@ const Contact = () => {
       <Footer />
     </>
   );
-};
-
-function Mark(props: { children: React.ReactNode }) {
-  return (
-    <>
-      {" "}
-      <mark className="flex gap-1 text-gold-800 bg-gold-100 rounded-md ring-gold-100 ring-4 dark:ring-gold-900 dark:bg-gold-900 dark:text-gold-200">
-        {props.children}
-      </mark>{" "}
-    </>
-  );
 }
-
-export default Contact;

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Container from "./container";
 import { motion } from "framer-motion";
@@ -19,7 +21,8 @@ const Cta = () => {
             Elevate Your Mineral Portfolio
           </h2>
           <p className="mt-3 text-lg font-medium text-white/90 lg:text-xl font-sans max-w-xl">
-            Partner with the most trusted sourcing experts in Africa. Exceptional quality, ethically delivered.
+            Partner with the most trusted sourcing experts in Africa.
+            Exceptional quality, ethically delivered.
           </p>
         </div>
 
