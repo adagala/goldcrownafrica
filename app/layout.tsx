@@ -4,11 +4,55 @@ import WhatsApp from "../components/whatsapp";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Providers } from "./providers";
+import { siteConfig } from "../lib/config";
 
 export const metadata: Metadata = {
-  title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
-  description:
-    "Gold Crown Africa is the leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices and professional services.",
+  metadataBase: new URL("https://goldcrownafrica.com"),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "gold trading",
+    "diamonds",
+    "copper cathodes",
+    "mineral sourcing",
+    "Africa mining",
+    "precious metals",
+    "certified diamonds",
+    "gold refining",
+    "assaying services",
+    "mineral mining",
+    "Gold Crown Africa",
+  ],
+  authors: siteConfig.authors,
+  creator: siteConfig.creator,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+  },
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

@@ -4,6 +4,7 @@ import Footer from "../../../components/footer";
 import Container from "../../../components/container";
 import Image from "next/image";
 import { getPostSlugs, getPostData, PostData } from "../../../lib/posts";
+import { siteConfig } from "../../../lib/config";
 
 interface PostPageProps {
   params: Promise<{
@@ -18,29 +19,41 @@ export async function generateMetadata({
   const postData = await getPostData(slug);
 
   return {
-    title: `${postData.title} | Gold Crown Africa`,
+    title: postData.title,
     description: postData.excerpt,
     openGraph: {
       type: "article",
-      siteName: "Gold Crown Africa",
-      url: `https://goldcrownafrica.com/blog/${postData.slug}`,
+      publishedTime: postData.date,
+      siteName: siteConfig.name,
+      url: `${siteConfig.url}/blog/${postData.slug}`,
       title: postData.title,
       description: postData.excerpt,
+      authors: siteConfig.authors.map((author) => author.name),
       images: postData.coverImage
         ? [
             {
-              url: `https://goldcrownafrica.com${postData.coverImage}`,
+              url: `${siteConfig.url}${postData.coverImage}`,
+              width: 1200,
+              height: 630,
+              alt: postData.title,
             },
           ]
-        : undefined,
+        : [
+            {
+              url: `${siteConfig.url}${siteConfig.ogImage}`,
+              width: 1200,
+              height: 630,
+              alt: siteConfig.name,
+            },
+          ],
     },
     twitter: {
       card: "summary_large_image",
       title: postData.title,
       description: postData.excerpt,
       images: postData.coverImage
-        ? [`https://goldcrownafrica.com${postData.coverImage}`]
-        : undefined,
+        ? [`${siteConfig.url}${postData.coverImage}`]
+        : [`${siteConfig.url}${siteConfig.ogImage}`],
     },
   };
 }
