@@ -16,6 +16,7 @@ export async function getStaticProps() {
         props: {
             allPostsData,
         },
+        revalidate: 3600, // Revalidate every hour
     };
 }
 

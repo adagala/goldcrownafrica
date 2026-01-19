@@ -44,13 +44,17 @@ export function getSortedPostsData(): PostData[] {
     });
 
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+  const today = new Date().toISOString().split('T')[0];
+  
+  return allPostsData
+    .filter((post) => post.date <= today)
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
 }
 
 export function getAllPostSlugs() {
