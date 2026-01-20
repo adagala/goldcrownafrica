@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/products",
+    url: "https://goldcrownafricagroup.com/products",
     title: "Mineral Products | Gold Crown Africa",
     description:
       "High-quality gold, rough diamonds, and copper cathodes sourced from licensed mining operations.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/11.jpeg",
+        url: "https://goldcrownafricagroup.com/img/11.jpeg",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mineral Products | Gold Crown Africa",
     description: "High-quality gold, rough diamonds, and copper cathodes.",
-    images: ["https://goldcrownafrica.com/img/11.jpeg"],
+    images: ["https://goldcrownafricagroup.com/img/11.jpeg"],
   },
 };
 

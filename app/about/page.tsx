@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/about",
+    url: "https://goldcrownafricagroup.com/about",
     title: "About Us | Gold Crown Africa",
     description:
       "30 years of experience in the African mining sector. Committed to professional and ethical operations.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/14.jpeg",
+        url: "https://goldcrownafricagroup.com/img/14.jpeg",
       },
     ],
   },
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Us | Gold Crown Africa",
     description: "30 years of experience in the African mining sector.",
-    images: ["https://goldcrownafrica.com/img/14.jpeg"],
+    images: ["https://goldcrownafricagroup.com/img/14.jpeg"],
   },
 };
 

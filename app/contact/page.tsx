@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/contact",
+    url: "https://goldcrownafricagroup.com/contact",
     title: "Contact Us | Gold Crown Africa",
     description:
       "Contact our Nairobi headquarters for inquiries about mineral sourcing and services.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/logo.png",
+        url: "https://goldcrownafricagroup.com/img/logo.png",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Contact Us | Gold Crown Africa",
     description:
       "Contact our Nairobi headquarters for inquiries about mineral sourcing and services.",
-    images: ["https://goldcrownafrica.com/img/logo.png"],
+    images: ["https://goldcrownafricagroup.com/img/logo.png"],
   },
 };
 
@@ -86,7 +86,7 @@ export default function Contact() {
                 </Mark>
               </div>
               <p className="text-xl leading-normal mt-2">
-                info@goldcrownafrica.com
+                info@goldcrownafricagroup.com
               </p>
             </div>
           </div>

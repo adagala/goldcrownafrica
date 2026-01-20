@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/",
+    url: "https://goldcrownafricagroup.com/",
     title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
     description:
       "Leading mineral sourcing company in Africa, specializing in gold, diamonds, and copper cathodes with ethical practices.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/logo.png",
+        url: "https://goldcrownafricagroup.com/img/logo.png",
       },
     ],
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Gold Crown Africa | Premium Mineral Sourcing & Services",
     description:
       "Leading mineral sourcing company in Africa specializing in gold, diamonds, and copper cathodes.",
-    images: ["https://goldcrownafrica.com/img/logo.png"],
+    images: ["https://goldcrownafricagroup.com/img/logo.png"],
   },
 };
 

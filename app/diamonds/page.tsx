@@ -13,13 +13,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/diamonds",
+    url: "https://goldcrownafricagroup.com/diamonds",
     title: "Polished & Collectible Diamonds | Gold Crown Africa",
     description:
       "Certified polished diamonds and rare collectible stones with expert sorting and evaluation.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/2.jpeg",
+        url: "https://goldcrownafricagroup.com/img/2.jpeg",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Polished & Collectible Diamonds | Gold Crown Africa",
     description: "Certified polished diamonds and rare collectible stones.",
-    images: ["https://goldcrownafrica.com/img/2.jpeg"],
+    images: ["https://goldcrownafricagroup.com/img/2.jpeg"],
   },
 };
 

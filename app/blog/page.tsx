@@ -12,13 +12,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/blog",
+    url: "https://goldcrownafricagroup.com/blog",
     title: "Blog | Gold Crown Africa",
     description:
       "Latest news, insights, and updates from Gold Crown Africa regarding the precious metals industry.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/logo.png",
+        url: "https://goldcrownafricagroup.com/img/logo.png",
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Blog | Gold Crown Africa",
     description:
       "Latest news, insights, and updates from Gold Crown Africa regarding the precious metals industry.",
-    images: ["https://goldcrownafrica.com/img/logo.png"],
+    images: ["https://goldcrownafricagroup.com/img/logo.png"],
   },
 };
 

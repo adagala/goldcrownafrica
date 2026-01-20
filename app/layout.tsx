@@ -7,7 +7,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "../lib/config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://goldcrownafrica.com"),
+  metadataBase: new URL("https://goldcrownafricagroup.com"),
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,

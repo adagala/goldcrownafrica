@@ -18,6 +18,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const postData = await getPostData(slug);
 
+  const imageUrl = postData.coverImage
+    ? `${siteConfig.url}${postData.coverImage}`
+    : `${siteConfig.url}${siteConfig.ogImage}`;
+
   return {
     title: postData.title,
     description: postData.excerpt,
@@ -29,31 +33,14 @@ export async function generateMetadata({
       title: postData.title,
       description: postData.excerpt,
       authors: siteConfig.authors.map((author) => author.name),
-      images: postData.coverImage
-        ? [
-            {
-              url: `${siteConfig.url}${postData.coverImage}`,
-              width: 1200,
-              height: 630,
-              alt: postData.title,
-            },
-          ]
-        : [
-            {
-              url: `${siteConfig.url}${siteConfig.ogImage}`,
-              width: 1200,
-              height: 630,
-              alt: siteConfig.name,
-            },
-          ],
+      // Provide a plain absolute URL string for wider compatibility
+      images: [imageUrl],
     },
     twitter: {
       card: "summary_large_image",
       title: postData.title,
       description: postData.excerpt,
-      images: postData.coverImage
-        ? [`${siteConfig.url}${postData.coverImage}`]
-        : [`${siteConfig.url}${siteConfig.ogImage}`],
+      images: [imageUrl],
     },
   };
 }

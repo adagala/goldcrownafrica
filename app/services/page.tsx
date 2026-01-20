@@ -17,13 +17,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Gold Crown Africa",
-    url: "https://goldcrownafrica.com/services",
+    url: "https://goldcrownafricagroup.com/services",
     title: "Professional Mining Services | Gold Crown Africa",
     description:
       "Smelting, assaying, refining, mineral mining, global logistics, and specialized security services.",
     images: [
       {
-        url: "https://goldcrownafrica.com/img/5.jpeg",
+        url: "https://goldcrownafricagroup.com/img/5.jpeg",
       },
     ],
   },
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Professional Mining Services | Gold Crown Africa",
     description:
       "Smelting, assaying, refining, mineral mining, global logistics, and specialized security services.",
-    images: ["https://goldcrownafrica.com/img/5.jpeg"],
+    images: ["https://goldcrownafricagroup.com/img/5.jpeg"],
   },
 };
 
