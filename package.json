@@ -29,6 +29,7 @@
     "@heroicons/react": "^2.0.17",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.19",
+    "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.25.0",
     "gray-matter": "^4.0.3",
     "next": "^16.1.1",

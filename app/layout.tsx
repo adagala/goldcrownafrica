@@ -5,6 +5,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import { Providers } from "./providers";
 import { siteConfig } from "../lib/config";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://goldcrownafricagroup.com"),
@@ -74,6 +75,7 @@ export default function RootLayout({
             <Navbar />
             <main className="flex-grow pt-20 lg:pt-24">{children}</main>
             <WhatsApp />
+            <Analytics />
           </div>
         </Providers>
       </body>
