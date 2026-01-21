@@ -18,12 +18,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const postData = await getPostData(slug);
 
+  // Use coverImage if available, fallback to default og image
   const imagePath = postData.coverImage || siteConfig.ogImage;
-  const imageUrl = `https://goldcrownafricagroup.com${imagePath}`;
+
+  // Ensure the image URL is absolute and uses HTTPS
+  let imageUrl: string;
+  if (imagePath.startsWith("http")) {
+    imageUrl = imagePath;
+  } else {
+    imageUrl = `${siteConfig.url}${imagePath}`;
+  }
 
   return {
-    title: postData.title,
+    title: `${postData.title} | ${siteConfig.name}`,
     description: postData.excerpt,
+    metadataBase: new URL(siteConfig.url),
     openGraph: {
       type: "article",
       publishedTime: postData.date,
@@ -38,6 +47,7 @@ export async function generateMetadata({
           width: 1200,
           height: 630,
           alt: postData.title,
+          type: "image/png",
         },
       ],
     },
@@ -45,7 +55,10 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: postData.title,
       description: postData.excerpt,
-      images: [imageUrl],
+      images: {
+        url: imageUrl,
+        alt: postData.title,
+      },
     },
     icons: {
       icon: "/favicon.png",
