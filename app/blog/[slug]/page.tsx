@@ -18,7 +18,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const postData = await getPostData(slug);
 
-  const imageUrl = postData.coverImage || siteConfig.ogImage;
+  const imagePath = postData.coverImage || siteConfig.ogImage;
+  const imageUrl = `https://goldcrownafricagroup.com${imagePath}`;
 
   return {
     title: postData.title,
