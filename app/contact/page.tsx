@@ -86,7 +86,7 @@ export default function Contact() {
                 </Mark>
               </div>
               <p className="text-xl leading-normal mt-2">
-                info@goldcrownafricagroup.com
+                goldcrownafricagroup@gmail.com
               </p>
             </div>
           </div>
