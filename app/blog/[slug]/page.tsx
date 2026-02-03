@@ -5,6 +5,7 @@ import Container from "../../../components/container";
 import Image from "next/image";
 import { getPostSlugs, getPostData, PostData } from "../../../lib/posts";
 import { siteConfig } from "../../../lib/config";
+import SocialShare from "../../../components/SocialShare";
 
 interface PostPageProps {
   params: Promise<{
@@ -74,6 +75,9 @@ export async function generateStaticParams() {
 export default async function Post({ params }: PostPageProps) {
   const { slug } = await params;
   const postData = await getPostData(slug);
+  
+  // Construct full URL for sharing
+  const postUrl = `${siteConfig.url}/blog/${slug}`;
 
   return (
     <>
@@ -115,6 +119,13 @@ export default async function Post({ params }: PostPageProps) {
             <div
               className="prose prose-indigo prose-lg max-w-none prose-headings:font-bold prose-a:text-indigo-600 prose-img:rounded-3xl dark:prose-invert dark:prose-a:text-indigo-400"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
+            />
+
+            {/* Social Share */}
+            <SocialShare
+              url={postUrl}
+              title={postData.title}
+              excerpt={postData.excerpt}
             />
 
             {/* Footer / CTA */}
