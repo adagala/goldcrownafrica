@@ -14,7 +14,6 @@ const SocialShare: React.FC<SocialShareProps> = ({ url, title, excerpt }) => {
   // Encode URL and text for sharing
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
-  const encodedText = encodeURIComponent(`${title} - ${excerpt}`);
 
   // Social share URLs
   const shareUrls = {
