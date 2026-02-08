@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Footer from "../../../components/footer";
 import Container from "../../../components/container";
+import SocialShare from "../../../components/SocialShare";
 import Image from "next/image";
 import { getPostSlugs, getPostData, PostData } from "../../../lib/posts";
 import { siteConfig } from "../../../lib/config";
@@ -123,7 +124,7 @@ export default async function Post({ params }: PostPageProps) {
 
             {/* Social Share */}
             <SocialShare
-              url={postUrl}
+              url={`${siteConfig.url}/blog/${postData.slug}`}
               title={postData.title}
               excerpt={postData.excerpt}
             />

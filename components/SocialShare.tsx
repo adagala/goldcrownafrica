@@ -5,33 +5,35 @@ import React, { useState } from "react";
 interface SocialShareProps {
   url: string;
   title: string;
-  excerpt?: string;
+  excerpt: string;
 }
 
-export default function SocialShare({ url, title, excerpt }: SocialShareProps) {
+const SocialShare: React.FC<SocialShareProps> = ({ url, title, excerpt }) => {
   const [showCopied, setShowCopied] = useState(false);
 
   // Encode URL and text for sharing
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 
-  // Social media share URLs
-  const twitterUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`;
-  const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-  const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+  // Social share URLs
+  const shareUrls = {
+    twitter: `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+  };
 
-  // Handle native share
+  // Native share handler
   const handleNativeShare = async () => {
     if (navigator.share) {
       try {
         await navigator.share({
           title: title,
-          text: excerpt || title,
+          text: excerpt,
           url: url,
         });
-      } catch (err) {
+      } catch (error) {
         // User cancelled or error occurred
-        console.log("Error sharing:", err);
+        console.log("Share cancelled or error:", error);
       }
     } else {
       // Fallback: copy to clipboard
@@ -39,125 +41,124 @@ export default function SocialShare({ url, title, excerpt }: SocialShareProps) {
         await navigator.clipboard.writeText(url);
         setShowCopied(true);
         setTimeout(() => setShowCopied(false), 2000);
-      } catch (err) {
-        console.log("Error copying to clipboard:", err);
+      } catch (error) {
+        console.log("Failed to copy:", error);
       }
     }
   };
 
   return (
     <div className="mt-12 pt-8 border-t border-gray-100 dark:border-trueGray-800">
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="flex flex-col items-center gap-4">
         <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
           Share this article
         </h3>
-        
         <div className="flex flex-wrap items-center justify-center gap-3">
           {/* Twitter Share Button */}
           <a
-            href={twitterUrl}
+            href={shareUrls.twitter}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Share on Twitter"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-indigo-100 hover:text-indigo-600 transition-colors duration-200 dark:bg-trueGray-800 dark:text-gray-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-400"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-indigo-100 dark:bg-trueGray-800 dark:hover:bg-indigo-900/30 transition-colors group"
           >
-            <TwitterIcon />
+            <svg
+              className="w-5 h-5 text-gray-700 group-hover:text-indigo-600 dark:text-gray-400 dark:group-hover:text-indigo-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
           </a>
 
           {/* Facebook Share Button */}
           <a
-            href={facebookUrl}
+            href={shareUrls.facebook}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Share on Facebook"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-indigo-100 hover:text-indigo-600 transition-colors duration-200 dark:bg-trueGray-800 dark:text-gray-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-400"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-indigo-100 dark:bg-trueGray-800 dark:hover:bg-indigo-900/30 transition-colors group"
           >
-            <FacebookIcon />
+            <svg
+              className="w-5 h-5 text-gray-700 group-hover:text-indigo-600 dark:text-gray-400 dark:group-hover:text-indigo-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                fillRule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                clipRule="evenodd"
+              />
+            </svg>
           </a>
 
           {/* LinkedIn Share Button */}
           <a
-            href={linkedinUrl}
+            href={shareUrls.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Share on LinkedIn"
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-indigo-100 hover:text-indigo-600 transition-colors duration-200 dark:bg-trueGray-800 dark:text-gray-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-400"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-indigo-100 dark:bg-trueGray-800 dark:hover:bg-indigo-900/30 transition-colors group"
           >
-            <LinkedinIcon />
+            <svg
+              className="w-5 h-5 text-gray-700 group-hover:text-indigo-600 dark:text-gray-400 dark:group-hover:text-indigo-400 transition-colors"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
           </a>
 
           {/* Native Share / Copy Link Button */}
           <button
             onClick={handleNativeShare}
             aria-label="Share or copy link"
-            className="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-indigo-100 hover:text-indigo-600 transition-colors duration-200 dark:bg-trueGray-800 dark:text-gray-400 dark:hover:bg-indigo-900 dark:hover:text-indigo-400"
+            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 hover:bg-indigo-100 dark:bg-trueGray-800 dark:hover:bg-indigo-900/30 transition-colors group relative"
           >
-            <ShareIcon />
-            {showCopied && (
-              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 text-xs font-medium text-white bg-gray-900 rounded whitespace-nowrap dark:bg-gray-700">
-                Copied!
-              </span>
+            {showCopied ? (
+              <svg
+                className="w-5 h-5 text-green-600 dark:text-green-400"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4.5 12.75l6 6 9-13.5"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-5 h-5 text-gray-700 group-hover:text-indigo-600 dark:text-gray-400 dark:group-hover:text-indigo-400 transition-colors"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"
+                />
+              </svg>
             )}
           </button>
         </div>
+        {showCopied && (
+          <p className="text-sm text-green-600 dark:text-green-400 font-medium">
+            Link copied to clipboard!
+          </p>
+        )}
       </div>
     </div>
   );
-}
+};
 
-// Social Media Icons
-const TwitterIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path d="M24 4.37a9.6 9.6 0 0 1-2.83.8 5.04 5.04 0 0 0 2.17-2.8c-.95.58-2 1-3.13 1.22A4.86 4.86 0 0 0 16.61 2a4.99 4.99 0 0 0-4.79 6.2A13.87 13.87 0 0 1 1.67 2.92 5.12 5.12 0 0 0 3.2 9.67a4.82 4.82 0 0 1-2.23-.64v.07c0 2.44 1.7 4.48 3.95 4.95a4.84 4.84 0 0 1-2.22.08c.63 2.01 2.45 3.47 4.6 3.51A9.72 9.72 0 0 1 0 19.74 13.68 13.68 0 0 0 7.55 22c9.06 0 14-7.7 14-14.37v-.65c.96-.71 1.79-1.6 2.45-2.61z" />
-  </svg>
-);
-
-const FacebookIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07" />
-  </svg>
-);
-
-const LinkedinIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-  >
-    <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76h-.03c-1.22 0-2-.83-2-1.87 0-1.06.8-1.87 2.05-1.87 1.24 0 2 .8 2.02 1.87 0 1.04-.78 1.87-2.05 1.87zM20.34 20.1h-3.63v-5.8c0-1.45-.52-2.45-1.83-2.45-1 0-1.6.67-1.87 1.32-.1.23-.11.55-.11.88v6.05H9.28s.05-9.82 0-10.84h3.63v1.54a3.6 3.6 0 0 1 3.26-1.8c2.39 0 4.18 1.56 4.18 4.89v6.21z" />
-  </svg>
-);
-
-const ShareIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="18"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="18" cy="5" r="3" />
-    <circle cx="6" cy="12" r="3" />
-    <circle cx="18" cy="19" r="3" />
-    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-  </svg>
-);
+export default SocialShare;
