@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import Footer from "../../../components/footer";
 import Container from "../../../components/container";
+import SocialShare from "../../../components/SocialShare";
 import Image from "next/image";
 import { getPostSlugs, getPostData, PostData } from "../../../lib/posts";
 import { siteConfig } from "../../../lib/config";
@@ -75,6 +76,9 @@ export default async function Post({ params }: PostPageProps) {
   const { slug } = await params;
   const postData = await getPostData(slug);
 
+  // Construct full URL for sharing
+  const postUrl = `${siteConfig.url}/blog/${slug}`;
+
   return (
     <>
       <article className="py-24">
@@ -115,6 +119,13 @@ export default async function Post({ params }: PostPageProps) {
             <div
               className="prose prose-indigo prose-lg max-w-none prose-headings:font-bold prose-a:text-indigo-600 prose-img:rounded-3xl dark:prose-invert dark:prose-a:text-indigo-400"
               dangerouslySetInnerHTML={{ __html: postData.contentHtml || "" }}
+            />
+
+            {/* Social Share */}
+            <SocialShare
+              url={`${siteConfig.url}/blog/${postData.slug}`}
+              title={postData.title}
+              excerpt={postData.excerpt}
             />
 
             {/* Footer / CTA */}
