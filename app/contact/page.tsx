@@ -62,7 +62,9 @@ export default function Contact() {
                 </Mark>
               </div>
               <p className="text-xl leading-normal mt-2">
-                Kitisuru Peponi Road
+                Delta Corner Tower,
+                <br /> Suite 603, 6th Floor,
+                <br /> Kitisuru Peponi Road
               </p>
             </div>
           </div>
